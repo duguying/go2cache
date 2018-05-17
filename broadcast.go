@@ -2,7 +2,7 @@
 // This file is part of go2cache project
 // Created by duguying on 2018/5/11.
 
-package main
+package go2cache
 
 import (
 	"fmt"
@@ -10,15 +10,6 @@ import (
 	"net"
 	"time"
 )
-
-func main() {
-
-	go dial([]string{"127.0.0.1:9981", "192.168.2.227:60000"})
-
-	go listen("127.0.0.1:9981")
-
-	select {}
-}
 
 func listen(addr string) {
 	ls, err := net.ResolveUDPAddr("udp", addr)
